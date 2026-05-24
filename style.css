@@ -1060,3 +1060,13 @@ footer {
         text-align: center;
     }
 }
+header {
+    position: fixed !important;
+    top: 0 !important;
+    width: 100% !important;
+    background: #fefcf5 !important;
+    z-index: 9999 !important;
+}
+body {
+    padding-top: 80px !important;
+}
