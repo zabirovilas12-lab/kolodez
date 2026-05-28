@@ -340,3 +340,233 @@ footer {
     padding: 32px 0;
     border-top: 1px solid #2a2a2a;
 }
+/* ===== КВАДРАТНЫЕ КАРТОЧКИ "ГДЕ МЫ РАБОТАЕМ" ===== */
+.area-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 24px;
+    margin-top: 30px;
+}
+
+.area-card {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 20px;
+    padding: 24px 16px;
+    text-align: center;
+    transition: all 0.3s ease;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.area-card:hover {
+    transform: translateY(-5px);
+    border-color: #ff6b35;
+    box-shadow: 0 10px 25px rgba(255, 107, 53, 0.2);
+}
+
+.area-icon {
+    font-size: 40px;
+    margin-bottom: 12px;
+}
+
+.area-card h3 {
+    color: #ff6b35;
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+}
+
+.area-card p {
+    color: #b0b0b0;
+    font-size: 0.8rem;
+    margin-bottom: 8px;
+}
+
+.area-badge {
+    display: inline-block;
+    background: #ff6b35;
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 4px 12px;
+    border-radius: 30px;
+    margin-top: 8px;
+}
+
+.area-badge.distance {
+    background: #2a2a2a;
+    color: #ff9f4a;
+}
+
+/* ===== КВАДРАТНЫЕ КАРТОЧКИ ОТЗЫВОВ ===== */
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-bottom: 50px;
+}
+
+.review-card {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 20px;
+    padding: 24px;
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    border-color: #ff6b35;
+    box-shadow: 0 10px 25px rgba(255, 107, 53, 0.2);
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 16px;
+}
+
+.review-avatar {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #ff6b35 0%, #ff9f4a 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: white;
+}
+
+.review-info h4 {
+    color: #ff6b35;
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.review-rating {
+    color: #ffc107;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+}
+
+.review-text {
+    color: #e0e0e0;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    flex: 1;
+}
+
+.review-date {
+    font-size: 0.7rem;
+    color: #888;
+    margin-top: 8px;
+}
+
+/* ===== ФОРМА ОТЗЫВОВ (тёмная тема) ===== */
+.review-form-container {
+    background: #1a1a1a;
+    border-radius: 24px;
+    padding: 32px;
+    border: 1px solid #2a2a2a;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.review-form-container h3 {
+    color: #ff6b35;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    color: #e0e0e0;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    background: #0d0d0d;
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    color: #e0e0e0;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #ff6b35;
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.2);
+}
+
+.submit-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #ff6b35 0%, #ff9f4a 100%);
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 40px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(255, 107, 53, 0.4);
+}
+
+.review-note {
+    text-align: center;
+    font-size: 0.75rem;
+    color: #888;
+    margin-top: 20px;
+}
+
+/* ===== АДАПТАЦИЯ ПОД ТЕЛЕФОН ===== */
+@media (max-width: 768px) {
+    .area-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+    
+    .area-card {
+        padding: 16px 12px;
+    }
+    
+    .area-icon {
+        font-size: 28px;
+    }
+    
+    .area-card h3 {
+        font-size: 0.9rem;
+    }
+    
+    .reviews-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .review-form-container {
+        padding: 24px 20px;
+    }
+}
