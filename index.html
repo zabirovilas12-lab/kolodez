@@ -628,5 +628,37 @@
             }
         };
     </script>
+        <script>
+        // Модальное окно
+        const modal = document.getElementById('articleModal');
+        const articleContent = document.getElementById('articleContent');
+        
+        // Тексты статей
+        const articles = {
+            1: '<h2>Какой колодец выбрать для загородного дома?</h2><p>Оптимальная глубина — от 8 до 15 бетонных колец. Всё зависит от уровня грунтовых вод. Мастер бесплатно приедет и определит точную глубину.</p><p><strong>📞 Бесплатная консультация: +7 (904) 854-32-90</strong></p>',
+            2: '<h2>Как понять, что колодец пора чистить?</h2><p>Признаки: мутная вода, неприятный запах сероводорода, снижение уровня воды. Чистку рекомендуется проводить каждые 2-3 года.</p><p><strong>📞 Бесплатная консультация: +7 (904) 854-32-90</strong></p>',
+            3: '<h2>Септик для дачи: какой лучше?</h2><p>Для сезонного проживания подойдёт биологический септик. Для постоянного дома — станция глубокой очистки. Монтаж под ключ за 1 день.</p><p><strong>📞 Бесплатная консультация: +7 (904) 854-32-90</strong></p>',
+            4: '<h2>Как выбрать бойлер для загородного дома?</h2><p>Для семьи из 3-4 человек подойдёт бойлер объёмом 80-100 литров. Установка с гарантией 1 год. Бесплатный выезд мастера.</p><p><strong>📞 Бесплатная консультация: +7 (904) 854-32-90</strong></p>'
+        };
+        
+        // Назначаем обработчики на кнопки
+        document.querySelectorAll('.read-more-btn').forEach(btn => {
+            btn.onclick = function() {
+                const articleId = this.getAttribute('data-article');
+                articleContent.innerHTML = articles[articleId];
+                modal.style.display = 'block';
+            };
+        });
+        
+        // Закрытие модального окна
+        document.querySelector('#articleModal .close').onclick = function() {
+            modal.style.display = 'none';
+        };
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        };
+    </script>
 </body>
 </html>
