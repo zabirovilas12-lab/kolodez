@@ -1556,3 +1556,9 @@ header {
 .delay-3 {
     transition-delay: 0.3s;
 }
+/* Супер-фикс для всех мобильных */
+header {
+    position: fixed !important;
+    top: 0 !important;
+    width: 100% !important;
+}
