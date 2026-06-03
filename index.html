@@ -319,45 +319,52 @@
             </div>
         </div>
     </section>
-           <section id="blog">
+              <section id="blog">
         <div class="container">
             <h2>📖 Полезные статьи</h2>
             <div class="blog-grid">
-                <div class="blog-card">
+                <div class="blog-card" data-article="1">
                     <div class="blog-content">
                         <span class="blog-category">Советы</span>
                         <h3>Какой колодец выбрать для загородного дома?</h3>
                         <p>Разбираем плюсы и минусы шахтных и трубчатых колодцев...</p>
-                        <button class="read-more-btn" data-article="1">Читать статью →</button>
+                        <button class="read-more-btn">Читать статью →</button>
                     </div>
                 </div>
-                <div class="blog-card">
+                <div class="blog-card" data-article="2">
                     <div class="blog-content">
                         <span class="blog-category">Обслуживание</span>
                         <h3>Как понять, что колодец пора чистить?</h3>
                         <p>Мутная вода, неприятный запах, снижение уровня...</p>
-                        <button class="read-more-btn" data-article="2">Читать статью →</button>
+                        <button class="read-more-btn">Читать статью →</button>
                     </div>
                 </div>
-                <div class="blog-card">
+                <div class="blog-card" data-article="3">
                     <div class="blog-content">
                         <span class="blog-category">Водоотведение</span>
                         <h3>Септик для дачи: какой лучше?</h3>
                         <p>Сравниваем накопительные, биологические и станции очистки...</p>
-                        <button class="read-more-btn" data-article="3">Читать статью →</button>
+                        <button class="read-more-btn">Читать статью →</button>
                     </div>
                 </div>
-                <div class="blog-card">
+                <div class="blog-card" data-article="4">
                     <div class="blog-content">
                         <span class="blog-category">Оборудование</span>
                         <h3>Как выбрать бойлер для загородного дома?</h3>
                         <p>Накопительный или проточный? Какой объём нужен...</p>
-                        <button class="read-more-btn" data-article="4">Читать статью →</button>
+                        <button class="read-more-btn">Читать статью →</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <!-- Модальное окно -->
+    <div id="articleModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="articleContent"></div>
+        </div>
+    </div>
         <section id="faq">
         <div class="container">
             <h2>❓ Часто задаваемые вопросы</h2>
@@ -629,29 +636,34 @@
         };
     </script>
         <script>
+            <script>
         // Модальное окно
         const modal = document.getElementById('articleModal');
         const articleContent = document.getElementById('articleContent');
+        const closeBtn = document.querySelector('.close');
         
         // Тексты статей
         const articles = {
-            1: '<h2>Какой колодец выбрать для загородного дома?</h2><p>Оптимальная глубина — от 8 до 15 бетонных колец. Всё зависит от уровня грунтовых вод. Мастер бесплатно приедет и определит точную глубину.</p><p><strong>📞 Бесплатная консультация: +7 (904) 854-32-90</strong></p>',
-            2: '<h2>Как понять, что колодец пора чистить?</h2><p>Признаки: мутная вода, неприятный запах сероводорода, снижение уровня воды. Чистку рекомендуется проводить каждые 2-3 года.</p><p><strong>📞 Бесплатная консультация: +7 (904) 854-32-90</strong></p>',
-            3: '<h2>Септик для дачи: какой лучше?</h2><p>Для сезонного проживания подойдёт биологический септик. Для постоянного дома — станция глубокой очистки. Монтаж под ключ за 1 день.</p><p><strong>📞 Бесплатная консультация: +7 (904) 854-32-90</strong></p>',
-            4: '<h2>Как выбрать бойлер для загородного дома?</h2><p>Для семьи из 3-4 человек подойдёт бойлер объёмом 80-100 литров. Установка с гарантией 1 год. Бесплатный выезд мастера.</p><p><strong>📞 Бесплатная консультация: +7 (904) 854-32-90</strong></p>'
+            1: '<h2 style="color:#1a6b5e;">Какой колодец выбрать для загородного дома?</h2><p>Оптимальная глубина — от 8 до 15 бетонных колец. Уровень грунтовых вод определяет мастер при бесплатном выезде.</p><p><strong>✅ Совет:</strong> Не экономьте на гидроизоляции швов — это продлит срок службы колодца.</p><p style="margin-top:20px;"><a href="tel:+79048543290" class="btn" style="background:#1a6b5e; color:white; text-decoration:none; padding:10px 20px; border-radius:40px;">📞 Бесплатная консультация</a></p>',
+            2: '<h2 style="color:#1a6b5e;">Как понять, что колодец пора чистить?</h2><p>Признаки: мутная вода, неприятный запах сероводорода, снижение уровня воды, появление водорослей на стенках.</p><p>Чистку рекомендуется проводить каждые 2-3 года. При первых признаках не ждите — запущенный колодец сложнее восстанавливать.</p><p style="margin-top:20px;"><a href="tel:+79048543290" class="btn" style="background:#1a6b5e; color:white; text-decoration:none; padding:10px 20px; border-radius:40px;">📞 Записаться на чистку</a></p>',
+            3: '<h2 style="color:#1a6b5e;">Септик для дачи: какой лучше?</h2><p>Для сезонного проживания (дача) подойдёт биологический септик с откачкой раз в год. Для постоянного дома — станция глубокой очистки, вода пригодна для полива.</p><p><strong>✅ Монтаж под ключ за 1 день. Гарантия на все работы.</strong></p><p style="margin-top:20px;"><a href="tel:+79048543290" class="btn" style="background:#1a6b5e; color:white; text-decoration:none; padding:10px 20px; border-radius:40px;">📞 Рассчитать стоимость</a></p>',
+            4: '<h2 style="color:#1a6b5e;">Как выбрать бойлер для загородного дома?</h2><p>Для семьи из 3-4 человек подойдёт бойлер объёмом 80-100 литров. Важно: накопительный бойлер экономичнее, проточный — компактнее.</p><p>Установка с гарантией 1 год. Бесплатный выезд мастера для замера.</p><p style="margin-top:20px;"><a href="tel:+79048543290" class="btn" style="background:#1a6b5e; color:white; text-decoration:none; padding:10px 20px; border-radius:40px;">📞 Вызвать мастера</a></p>'
         };
         
-        // Назначаем обработчики на кнопки
-        document.querySelectorAll('.read-more-btn').forEach(btn => {
-            btn.onclick = function() {
-                const articleId = this.getAttribute('data-article');
+        // Открытие статьи при клике на карточку
+        document.querySelectorAll('.blog-card').forEach(card => {
+            const btn = card.querySelector('.read-more-btn');
+            const articleId = card.getAttribute('data-article');
+            
+            btn.onclick = function(e) {
+                e.stopPropagation();
                 articleContent.innerHTML = articles[articleId];
                 modal.style.display = 'block';
             };
         });
         
-        // Закрытие модального окна
-        document.querySelector('#articleModal .close').onclick = function() {
+        // Закрытие
+        closeBtn.onclick = function() {
             modal.style.display = 'none';
         };
         window.onclick = function(event) {
