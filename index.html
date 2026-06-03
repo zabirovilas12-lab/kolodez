@@ -29,7 +29,29 @@
             <button class="btn" onclick="callNow()">📞 Заказать звонок</button>
         </div>
     </section>
-
+       <section id="about">
+        <div class="container">
+            <h2>О компании</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>Мы работаем в сфере <strong>водоснабжения и водоотведения</strong> уже <strong>18 лет</strong>. За это время мы научились делать всё качественно и надёжно.</p>
+                    <p>Наши клиенты — это дачники и владельцы загородных домов в Одинцово и районе. Мы ценим каждого и делаем работу так, как хотели бы, чтобы сделали для нас самих.</p>
+                    <p><strong>Почему нам доверяют:</strong></p>
+                    <ul class="about-list">
+                        <li>✓ <strong>18 лет опыта</strong> — знаем все нюансы</li>
+                        <li>✓ Работаем <strong>без посредников</strong> — цены честные</li>
+                        <li>✓ <strong>Гарантия</strong> на все работы от 1 года</li>
+                        <li>✓ <strong>Чистота на участке</strong> после нас — убираем за собой</li>
+                        <li>✓ <strong>Фиксированная цена</strong> в договоре — без доплат</li>
+                    </ul>
+                    <button class="btn open-call-btn">📞 Заказать звонок</button>
+                </div>
+                <div class="about-image">
+                    <img src="kompressor.jpg" alt="Наша работа" style="width:100%; border-radius:24px;">
+                </div>
+            </div>
+        </div>
+    </section>
     <section id="services">
         <div class="container">
             <h2>Наши услуги</h2>
@@ -626,5 +648,25 @@
             }
         };
     </script>
+        <!-- Модальное окно для заказа звонка -->
+    <div id="callModal" class="modal">
+        <div class="modal-content call-modal">
+            <span class="close-call">&times;</span>
+            <div class="modal-header">
+                <h3>📞 Заказать звонок</h3>
+                <p>Оставьте номер — мы перезвоним через 15 минут</p>
+            </div>
+            <form id="callForm">
+                <div class="form-group">
+                    <input type="text" id="callName" placeholder="Ваше имя" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="callPhone" placeholder="+7 (___) ___-__-__" required>
+                </div>
+                <button type="submit" class="btn submit-call">Перезвоните мне</button>
+                <p class="form-note">Нажимая на кнопку, вы соглашаетесь с обработкой данных</p>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
