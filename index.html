@@ -656,7 +656,6 @@
             }
         };
     </script>
-        <!-- Модальное окно для заказа звонка -->
     <div id="callModal" class="modal">
         <div class="modal-content call-modal">
             <span class="close-call">&times;</span>
@@ -676,5 +675,40 @@
             </form>
         </div>
     </div>
+        <script>
+        const callModal = document.getElementById('callModal');
+        const openBtns = document.querySelectorAll('.open-call-btn');
+        const closeBtn = document.querySelector('.close-call');
+        
+        openBtns.forEach(btn => {
+            btn.onclick = function() {
+                callModal.style.display = 'block';
+            };
+        });
+        
+        if (closeBtn) {
+            closeBtn.onclick = function() {
+                callModal.style.display = 'none';
+            };
+        }
+        
+        window.onclick = function(event) {
+            if (event.target == callModal) {
+                callModal.style.display = 'none';
+            }
+        };
+        
+        const form = document.getElementById('callForm');
+        if (form) {
+            form.onsubmit = function(e) {
+                e.preventDefault();
+                const name = document.getElementById('callName').value;
+                const phone = document.getElementById('callPhone').value;
+                alert(`Спасибо, ${name}! Мы перезвоним вам на ${phone} в ближайшее время.`);
+                form.reset();
+                callModal.style.display = 'none';
+            };
+        }
+    </script>
 </body>
 </html>
