@@ -56,7 +56,6 @@
                     <li>✓ Чистота на участке — убираем за собой</li>
                     <li>✓ Фиксированная цена в договоре — без доплат</li>
                 </ul>
-                <button class="btn open-call-btn">📞 Заказать звонок</button>
             </div>
         </div>
     </section>
@@ -655,60 +654,6 @@
                 modal.style.display = 'none';
             }
         };
-    </script>
-    <div id="callModal" class="modal">
-        <div class="modal-content call-modal">
-            <span class="close-call">&times;</span>
-            <div class="modal-header">
-                <h3>📞 Заказать звонок</h3>
-                <p>Оставьте номер — мы перезвоним через 15 минут</p>
-            </div>
-            <form id="callForm">
-                <div class="form-group">
-                    <input type="text" id="callName" placeholder="Ваше имя" required>
-                </div>
-                <div class="form-group">
-                    <input type="tel" id="callPhone" placeholder="+7 (___) ___-__-__" required>
-                </div>
-                <button type="submit" class="btn submit-call">Перезвоните мне</button>
-                <p class="form-note">Нажимая на кнопку, вы соглашаетесь с обработкой данных</p>
-            </form>
-        </div>
-    </div>
-        <script>
-        const callModal = document.getElementById('callModal');
-        const openBtns = document.querySelectorAll('.open-call-btn');
-        const closeBtn = document.querySelector('.close-call');
-        
-        openBtns.forEach(btn => {
-            btn.onclick = function() {
-                callModal.style.display = 'block';
-            };
-        });
-        
-        if (closeBtn) {
-            closeBtn.onclick = function() {
-                callModal.style.display = 'none';
-            };
-        }
-        
-        window.onclick = function(event) {
-            if (event.target == callModal) {
-                callModal.style.display = 'none';
-            }
-        };
-        
-        const form = document.getElementById('callForm');
-        if (form) {
-            form.onsubmit = function(e) {
-                e.preventDefault();
-                const name = document.getElementById('callName').value;
-                const phone = document.getElementById('callPhone').value;
-                alert(`Спасибо, ${name}! Мы перезвоним вам на ${phone} в ближайшее время.`);
-                form.reset();
-                callModal.style.display = 'none';
-            };
-        }
     </script>
 </body>
 </html>
