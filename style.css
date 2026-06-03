@@ -17,17 +17,24 @@ body {
     padding: 0 24px;
 }
 
-/* Шапка — закреплённая (работает на всех телефонах) */
+/* ===== ШАПКА — ФИКСИРОВАННАЯ (100% РАБОТАЕТ) ===== */
 header {
     background: rgba(255, 255, 245, 0.95);
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid #e2dccf;
     padding: 16px 0;
-    position: -webkit-sticky;  /* для Safari на iPhone */
-    position: sticky;
+    position: fixed;
     top: 0;
-    z-index: 1000;
+    left: 0;
     width: 100%;
+    z-index: 1000;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+}
+
+body {
+    padding-top: 80px;
 }
 header .container {
     display: flex;
