@@ -1452,3 +1452,106 @@ header {
     margin-left: 20px;
     margin-bottom: 8px;
 }
+/* ===== БЛОК О КОМПАНИИ ===== */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-text p {
+    margin-bottom: 15px;
+    color: #2c3a35;
+    line-height: 1.6;
+}
+
+.about-list {
+    list-style: none;
+    margin: 20px 0;
+    padding: 0;
+}
+
+.about-list li {
+    margin-bottom: 10px;
+    padding-left: 5px;
+    color: #2c3a35;
+}
+
+.open-call-btn {
+    margin-top: 20px;
+}
+
+/* ===== МОДАЛЬНОЕ ОКНО ===== */
+.call-modal {
+    max-width: 450px !important;
+    text-align: center;
+}
+
+.modal-header h3 {
+    color: #1a6b5e;
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+
+.modal-header p {
+    color: #4a6b5e;
+    font-size: 0.85rem;
+}
+
+.close-call {
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #aaa;
+}
+
+.close-call:hover {
+    color: #1a6b5e;
+}
+
+#callForm .form-group {
+    margin-bottom: 18px;
+}
+
+#callForm input {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid #e0d8cc;
+    border-radius: 50px;
+    font-size: 1rem;
+}
+
+.submit-call {
+    width: 100%;
+    background: #1a6b5e;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.submit-call:hover {
+    background: #0f4e44;
+}
+
+.form-note {
+    font-size: 0.7rem;
+    color: #8a9a8e;
+    margin-top: 15px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .about-image {
+        order: -1;
+    }
+}
